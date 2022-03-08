@@ -1,26 +1,29 @@
-import Serviceable, Engine, Battery
+from engine import Engine
+from battery import Battery
+from serviceable import Serviceable
 
 class Car(Serviceable):
     def __init__(self):
         super()
-        this.self = self
         self.engine = None
         self.battery = None
 
     def __init__(self, Engine, Battery):
         super()
-        this.self = self
         self.engine = Engine
         self.battery = Battery    
         
-    def setBattery(Battery):
+    def setBattery(self, Battery):
         self.battery = Battery
     
-    def setEngine(Engine):
+    def setEngine(self, Engine):
         self.engine = Engine
+        
     
-    def needs_service():
-        if (self.engine.needs_service() == True or self.battery.needs_service() == True):
+    def needs_service(self):
+        if self.battery.needs_service():
             return True
-        else: 
+        elif self.engine.needs_service():
+            return True
+        else:
             return False
